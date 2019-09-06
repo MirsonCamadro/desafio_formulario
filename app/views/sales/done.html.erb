@@ -1,6 +1,16 @@
 <h1> El registro fue almacenado con éxito! </h1>
- 
 
-<p><%= @sales.value%></p>   
-<p><%= @sales.discount%></p>
-<p><%= @sales.total%></p>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Factura
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Codigo:<%= @sales.cod%> </li>
+    <li class="list-group-item">Detalle: <%= @sales.detail%></li>
+    <li class="list-group-item">Valor antes de impuesto: <%= @sales.value%></li>
+     <li class="list-group-item">Descuento: <%= @sales.discount%></li>
+      <li class="list-group-item">Valor despues de impuesto: <%= @sales.total%></li>
+  </ul>
+</div>
+
+<%= link_to "volver!", newnew_path %>
