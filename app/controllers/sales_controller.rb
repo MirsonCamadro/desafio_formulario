@@ -14,12 +14,15 @@ class SalesController < ApplicationController
       sale.tax = 0
     end
 
+    last_cod = Sale.last
+    sale.cod = last_cod.cod.to_i + 1
     sale.save
     redirect_to done_path
   end
 
   def done
     @sales = Sale.last
+
   end
 
   private
